@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @game_word.game_id %>
+</p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @game_word.word_id %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @game_word.text %>
+</p>
+
+<%= link_to 'Edit', edit_game_word_path(@game_word) %> |
+<%= link_to 'Back', game_words_path %>
