@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :game_words
-  resources :games
-  resources :users
-  resources :words
-  resources :songs
+  resources :game_words, defaults: {format: :json}
+  resources :games, defaults: {format: :json}
+  resources :users, defaults: {format: :json}
+  resources :words, defaults: {format: :json}
+  resources :songs, defaults: {format: :json}
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
