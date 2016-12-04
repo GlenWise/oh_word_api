@@ -8,11 +8,11 @@
 # 
 # User.create(username: "user1", nickname: "rapper1", password: "glen")
 # 
-# Song.create(title: "Straight Outta Compton", artist: "N.W.A.", lyrics: "Straight outta _LOCATION_, crazy _OCCUPATION_ named _PERSON_IN_ROOM_
-# From the _NOUN_ called _PLURAL_NOUN_ With _PLURAL_NOUN_ 
-# When I'm called off, I got a sawed off 
-# _VERB_ the _NOUN_, and _PLURAL_NOUN_ are hauled off
-# You too, boy, if ya _VERB_ with me
+# Song.create(title: "Straight Outta Compton", artist: "N.W.A.", lyrics: "Straight outta _LOCATION_, crazy _OCCUPATION_ named _PERSON_IN_ROOM_ \n
+# From the _NOUN_ called _PLURAL_NOUN_ With _PLURAL_NOUN_ \n
+# When I'm called off, I got a sawed off \n
+# _VERB_ the _NOUN_, and _PLURAL_NOUN_ are hauled off \n
+# You too, boy, if ya _VERB_ with me \n
 # The _PLURAL_NOUN_ are gonna hafta come and get me")
 # 
 # Game.create(user_id: 1, song_id: 1)
