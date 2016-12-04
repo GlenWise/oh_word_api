@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
   resources :game_words, defaults: {format: :json}
   resources :games, defaults: {format: :json}
-  resources :users, defaults: {format: :json}
+  resources :users, except: [:new, :edit], defaults: {format: :json}
   resources :words, defaults: {format: :json}
   resources :songs, defaults: {format: :json}
+  resources :sessions
+  
+  # Authentication routes
+  get 'user/edit' => 'users#edit', as: :edit_current_user
+  get 'signup' => 'users#new', as: :signup
+  get 'logout' => 'sessions#destroy', as: :logout
+  post 'login' => 'users#get_token', as: :login
+  # route to handle token
+  post :token, controller: 'application', defaults: {format: :json}
+#  post :token, controller: 'application'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

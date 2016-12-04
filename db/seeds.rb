@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(username: "user1", nickname: "rapper1", password_digest: "1234")
+User.create(username: "user1", nickname: "rapper1", password: "glen")
 
 Song.create(title: "Straight Outta Compton", artist: "N.W.A.", lyrics: "Straight outta _LOCATION_, crazy _OCCUPATION_ named _PERSON_IN_ROOM_
 From the _NOUN_ called _PLURAL_NOUN_ With _PLURAL_NOUN_ 
