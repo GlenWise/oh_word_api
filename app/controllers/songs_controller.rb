@@ -33,7 +33,7 @@ class SongsController < ApplicationController
     else
       format.json { render json: @song.errors, status: :unprocessable_entity }
     end
-    end
+    
   end
 
   # PATCH/PUT /songs/1
