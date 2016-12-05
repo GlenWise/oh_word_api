@@ -39,25 +39,20 @@ class SongsController < ApplicationController
   # PATCH/PUT /songs/1
   # PATCH/PUT /songs/1.json
   def update
-    respond_to do |format|
       if @song.update(song_params)
-        format.html { redirect_to @song, notice: 'Song was successfully updated.' }
         format.json { render :show, status: :ok, location: @song }
       else
-        format.html { render :edit }
         format.json { render json: @song.errors, status: :unprocessable_entity }
       end
-    end
+    
   end
 
   # DELETE /songs/1
   # DELETE /songs/1.json
   def destroy
     @song.destroy
-    respond_to do |format|
-      format.html { redirect_to songs_url, notice: 'Song was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    format.json { head :no_content }
+    
   end
 
   private

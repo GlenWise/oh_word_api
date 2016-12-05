@@ -23,3 +23,13 @@
 # Word.create(description: "Person in room", index: 6, song_id: 1)
 # 
 # GameWord.create(game_id: 1, word_id: 1, text: "Compton")
+
+
+Word.create(description: "Place", index: 2, song_id: 1)
+Word.create(description: "Occupation", index: 4, song_id: 1)
+Word.create(description: "Person in room", index: 6, song_id: 1)
+Word.create(description: “Noun”, index: 9, song_id: 1)
+Word.create(description: “Noun”, index: 11, song_id: 1)
+Word.create(description: “Plural Noun”, index: 11, song_id: 1)
+Word.create(description: “Verb”, index: 20, song_id: 1)
+Word.create(description: “Plural Noun”, index: 24, song_id: 1)
