@@ -48,7 +48,7 @@ class WordsController < ApplicationController
   def destroy
     @word.destroy
     format.json { head :no_content }
-    end
+    
   end
 
   private
