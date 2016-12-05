@@ -21,44 +21,37 @@ class GameWordsController < ApplicationController
   def edit
   end
 
+  def for_game
+    @game_words = GameWord.all.for_game(game_word_params[:game_id])
+    render json: @game_words
+  end
+  
   # POST /game_words
   # POST /game_words.json
   def create
     @game_word = GameWord.new(game_word_params)
-
-    respond_to do |format|
-      if @game_word.save
-        format.html { redirect_to @game_word, notice: 'Game word was successfully created.' }
-        format.json { render :show, status: :created, location: @game_word }
-      else
-        format.html { render :new }
-        format.json { render json: @game_word.errors, status: :unprocessable_entity }
-      end
+    if @game_word.save
+      format.json { render :show, status: :created, location: @game_word }
+    else
+      format.json { render json: @game_word.errors, status: :unprocessable_entity }
     end
   end
 
   # PATCH/PUT /game_words/1
   # PATCH/PUT /game_words/1.json
   def update
-    respond_to do |format|
       if @game_word.update(game_word_params)
-        format.html { redirect_to @game_word, notice: 'Game word was successfully updated.' }
         format.json { render :show, status: :ok, location: @game_word }
       else
-        format.html { render :edit }
         format.json { render json: @game_word.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   # DELETE /game_words/1
   # DELETE /game_words/1.json
   def destroy
     @game_word.destroy
-    respond_to do |format|
-      format.html { redirect_to game_words_url, notice: 'Game word was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    format.json { head :no_content }
   end
 
   private

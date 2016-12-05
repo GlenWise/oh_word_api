@@ -7,6 +7,10 @@ class WordsController < ApplicationController
     @words = Word.all
   end
 
+  def for_song
+    @words = Word.all.for_song(word_params[:song_id])
+    render json: @words
+  end
   # GET /words/1
   # GET /words/1.json
   def show

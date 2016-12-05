@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy', as: :logout
   post 'login' => 'users#get_token', as: :login
   # route to handle token
-  post :token, controller: 'application', defaults: {format: :json}
-#  post :token, controller: 'application'
+  #post :token, controller: 'application', defaults: {format: :json}
+  post :token, controller: 'application'
 
+  get 'wordsforsong' => 'words#for_song', as: :wordsforsong
+  get 'gamewordsforgame' => 'game_words#for_game', as: :gamewordsforgame
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

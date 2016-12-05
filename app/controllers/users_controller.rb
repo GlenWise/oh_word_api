@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include ActionController::HttpAuthentication::Basic::ControllerMethods
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   # :authenticate_user_from_token :except => [:new]
   before_filter :authenticate_user_from_token, :except => [:create, :get_token]
@@ -14,7 +16,7 @@ class UsersController < ApplicationController
   end
   
   def get_token
-    authenticate_with_http_basic do |username, password|
+    # authenticate_with_http_basic do |username, password|
       uname = user_params[:username]
       pwd = user_params[:password]
       # print password
@@ -25,7 +27,7 @@ class UsersController < ApplicationController
       else
         render json: { error: 'Incorrect credentials' }, status: 401
       end
-    end
+    # end
   end
 
   # GET /users/new

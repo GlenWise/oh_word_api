@@ -6,16 +6,29 @@ class ApplicationController < ActionController::API
     include ActionController::HttpAuthentication::Token::ControllerMethods
 
     # A method to handle initial authentication
-    def token
-      authenticate_with_http_basic do |username, password|
-        user = User.find_by(username: username).try(:authenticate, password)
-        if user
-          render json: { token: user.auth_token }
-        else
-          render json: { error: 'Incorrect credentials' }, status: 401
-        end
-      end
-    end
+    # def token
+    #   authenticate_with_http_basic do |username, password|
+    #     user = User.find_by(username: username).try(:authenticate, password)
+    #     if user
+    #       render json: { token: user.auth_token }
+    #     else
+    #       render json: { error: 'Incorrect credentials' }, status: 401
+    #     end
+    #   end
+    # end
+    
+    # def token
+    #     uname = user_params[:username]
+    #     pwd = user_params[:password]
+    #     # print password
+    #     user = User.find_by_username(uname).try(:authenticate, pwd)
+    #     if user
+    #       print "JJJIJIJIJ #{user}"
+    #       render json: { token: user.auth_token }
+    #     else
+    #       render json: { error: 'Incorrect credentials' }, status: 401
+    #     end
+    # end
 
     # We want every othetokenr interaction to be authenticated with the token
    before_filter :authenticate_user_from_token, :except => [:token]

@@ -20,7 +20,7 @@ development:
   database: oh_word_test_development
   pool: 5
   username: postgres
-  password:
+  password: postgres
   timeout: 5000
   
 # default: &default

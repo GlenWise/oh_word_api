@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 20161203232538) do
   create_table "words", force: :cascade do |t|
     t.string   "description"
     t.integer  "index"
-    t.string   "text"
     t.integer  "song_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
