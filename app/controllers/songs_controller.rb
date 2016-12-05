@@ -12,7 +12,7 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
-    
+    render json: @song
   end
 
   # GET /songs/new
