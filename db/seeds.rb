@@ -17,7 +17,6 @@ The _PLURAL_NOUN_ are gonna hafta come and get me")
 
 Game.create(user_id: 1, song_id: 1)
 # 
-# 
 # Word.create(description: "Place", index: 2, song_id: 1)
 # Word.create(description: "Occupation", index: 4, song_id: 1)
 # Word.create(description: "Person in room", index: 6, song_id: 1)

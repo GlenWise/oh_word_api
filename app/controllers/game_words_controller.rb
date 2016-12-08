@@ -23,7 +23,7 @@ class GameWordsController < ApplicationController
 
   def for_game
     @game_words = GameWord.all.for_game(game_word_params[:game_id])
-    render json: @game_words
+    render json: :index
   end
   
   # POST /game_words
